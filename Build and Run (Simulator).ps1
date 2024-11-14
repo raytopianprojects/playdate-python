@@ -4,6 +4,7 @@
     [string]$name = (Get-Item -Path .).BaseName,
     [switch]$dontbuild = $false
  )
+& py.exe convert.py
 
 # Close Simulator
 $sim = Get-Process "PlaydateSimulator" -ErrorAction SilentlyContinue

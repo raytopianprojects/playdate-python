@@ -1,28 +1,28 @@
-import "dvd" -- DEMO
-local dvd = dvd(1, -1) -- DEMO
-
-local gfx <const> = playdate.graphics
-local font = gfx.font.new('font/Mini Sans 2X') -- DEMO
-
+main= {}
+import "pd"
+import "test.test"
+print(test.test.x)
+import "dvd"
+print(dvd.x, "hi")
+local advd = dvd.DVD(1, -1)
+local gfx = playdate.graphics
+local font = gfx.font.new("font/Mini Sans 2X")
 local function loadGame()
-	playdate.display.setRefreshRate(50) -- Sets framerate to 50 fps
-	math.randomseed(playdate.getSecondsSinceEpoch()) -- seed for math.random
-	gfx.setFont(font) -- DEMO
+    playdate.display.setRefreshRate(50)
+    math.randomseed(playdate.getSecondsSinceEpoch())
+    gfx.setFont(font)
 end
-
 local function updateGame()
-	dvd:update() -- DEMO
+    advd.update()
 end
-
 local function drawGame()
-	gfx.clear() -- Clears the screen
-	dvd:draw() -- DEMO
+    gfx.clear()
+    advd.draw()
 end
-
 loadGame()
-
-function playdate.update()
-	updateGame()
-	drawGame()
-	playdate.drawFPS(0,0) -- FPS widget
+local function update()
+    updateGame()
+    drawGame()
+    playdate.drawFPS(0, 0)
 end
+playdate.update = update

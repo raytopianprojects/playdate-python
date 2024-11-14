@@ -1,1 +1,4 @@
 Builds/*
+*.pyc
+.sentry-native
+.idea

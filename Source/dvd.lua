@@ -1,4 +1,5 @@
-dvd= {}
+dvd = {}
+local dvd = dvd
 import "pd"
 dvd.x = 1
 local DVD = class(function(DVD)

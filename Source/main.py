@@ -1,6 +1,6 @@
 import pd
 import test.test
-print(test.test.x)
+print(test_test.x)
 import dvd
 print(dvd.x, "hi")
 advd = dvd.DVD(1, -1)  # DEMO

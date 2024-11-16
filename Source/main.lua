@@ -1,7 +1,8 @@
-main= {}
+main = {}
+local main = main
 import "pd"
-import "test.test"
-print(test.test.x)
+import "test/test"
+print(test_test.x)
 import "dvd"
 print(dvd.x, "hi")
 local advd = dvd.DVD(1, -1)

@@ -14,8 +14,10 @@ for root, dirs, files in os.walk(r'Source'):
                 print(path, extension, path.split("\\")[-1])
                 with open(f"{path}.lua", "w") as pf:
                     try:
-                        v = path.split("\\")[-1]
-                        pf.write(v + "= {}\n")
+                        l = path.split("\\")
+                        v = "_".join(l[1:])
+                        pf.write(v + " = {}\n")
+                        pf.write(f"local {l[-1]} = " + f"{v}\n")
                         pf.write(translator.translate(py))
                     except Exception as e:
                         print(e)

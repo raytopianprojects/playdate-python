@@ -390,7 +390,8 @@ class NodeVisitor(ast.NodeVisitor):
         else:
             values["asname"] = node.names[0].asname
             values["name"] = node.names[0].name
-
+        values["name"] = values["name"].replace(".", "/")
+        print(values)
         self.emit(line.format(**values))
 
     def visit_Index(self, node):

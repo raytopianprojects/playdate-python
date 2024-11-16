@@ -1,4 +1,5 @@
-pd= {}
+pd = {}
+local pd = pd
 
 import "CoreLibs/graphics"
 import "CoreLibs/sprites"
